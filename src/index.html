@@ -1,82 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal site</title>
 
     <link rel="stylesheet" href="css\style.css" />
 
     <style>
-        .profile-image {
-            float: right;
-            clear: both;
-            border-radius: 10px;
+      @media (min-width: 700px) {
+        .profile-header {
+          display: flex;
+          gap: 30px;
         }
+      }
 
-        .project-div {
-            padding: 0px 30px;
-        }
+      .profile-image {
+        border-radius: 10px;
+      }
+      .project-div {
+        padding: 0px 30px;
+      }
+      .project-div a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-        .project-div a {
-            display: flex;
-            flex-direction: column;
+        border: solid #ddd;
+        padding: 5px;
+        border-radius: 6px;
 
-            border: solid #ddd;
-            padding: 5px;
-            border-radius: 6px;
-        }
+        min-height: 50px;
+      }
 
-        .project-div a:hover {
-            opacity: 0.5;
-        }
+      .project-div a:hover {
+        opacity: 0.5;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Alex's site.</h1>
+      <h1>Alex's site.</h1>
     </header>
     <main>
-        <img class="profile-image" src="profile_foto.png">
+      <div class="profile-header">
+        <img class="profile-image" src="profile_foto.png" />
 
-        <p> Hi. I'm Alex. This is my personal site. </p>
-        <section>
+        <div>
+          <p>Hi. I'm Alex. This is my personal site.</p>
+          <section>
             <h2>Contact me:</h2>
             <ul>
-                <li>Mail: <a href="mailto:knyazev.al.st@gmail.com">knyazev.al.st@gmail.com</a></li>
-                <li>GitHub: <a href="https://github.com/alex-knyaz">github.com/alex-knyaz</a></li>
+              <li>
+                Mail:
+                <a href="mailto:knyazev.al.st@gmail.com"
+                  >knyazev.al.st@gmail.com</a
+                >
+              </li>
+              <li>
+                GitHub:
+                <a href="https://github.com/alex-knyaz"
+                  >github.com/alex-knyaz</a
+                >
+              </li>
             </ul>
-        </section>
+          </section>
+        </div>
+      </div>
 
-        <section style="clear: both;">
-            <h2>Projects:</h2>
-            <div class="project-div">
-                <h3>Svelte-domtree</h3>
-                <p>Svelte-domtree is a svelte component visualize DOM similar to DOM tree in Chrome DevTools.</p>
-                <a href="https://alex-knyaz.github.io/svelte-domtree/">
-                    <img src="resources/img.png" />
-                </a>
-            </div>
-        </section>
+      <section>
+        <h2>Projects:</h2>
+        <div class="project-div">
+          <h3>Svelte-domtree</h3>
+          <p>
+            Svelte-domtree is a svelte component visualize DOM similar to DOM
+            tree in Chrome DevTools.
+          </p>
+          <a href="https://alex-knyaz.github.io/svelte-domtree/">
+            <img src="resources/img.png" />
+          </a>
+        </div>
+      </section>
 
-        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+      <br />
+      <!--<section>
+        <h2>Blog:</h2>
+        <ul>
+           <li>
+            <a href="blog/faster-than-binary-search.md"
+              >Faster than binary search</a
+            >
+          </li> 
+        </ul>
+      </section>-->
     </main>
-
-</body>
-
+  </body>
 </html>
-
 
 <!-- 
     TODO: 
     [x] Dark theme
     [x] Links colors
-    [ ] Mobile friendly
+    [x] Mobile friendly
     [ ] Blog
     [ ] Auto gen rss
     [ ] Auto gen list of links to folder
