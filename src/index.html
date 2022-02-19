@@ -9,16 +9,6 @@
     <link rel="stylesheet" href="css\style.css" />
 
     <style>
-      @media (min-width: 700px) {
-        .profile-header {
-          display: flex;
-          gap: 30px;
-        }
-        body {
-          font-size: 4vmin;
-        }
-      }
-
       .profile-image {
         border-radius: 10px;
         width: 100%;
@@ -29,9 +19,6 @@
       }
       .project-div a {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-
         border: solid #ddd;
         padding: 5px;
         border-radius: 6px;
@@ -39,8 +26,20 @@
         min-height: 50px;
       }
 
+      .project-div a img {
+        width: 100%;
+        object-fit: cover;
+      }
+
       .project-div a:hover {
         opacity: 0.5;
+      }
+
+      @media (min-width: 700px) {
+        .profile-header {
+          display: flex;
+          gap: 30px;
+        }
       }
     </style>
   </head>
@@ -96,16 +95,16 @@
       </section>
 
       <br />
-      <!--<section>
+      <!-- <section>
         <h2>Blog:</h2>
         <ul>
-           <li>
-            <a href="blog/faster-than-binary-search.md"
+          <li>
+            <a href="/blog/faster-than-binary-search"
               >Faster than binary search</a
             >
-          </li> 
+          </li>
         </ul>
-      </section>-->
+      </section> -->
     </main>
   </body>
 </html>
@@ -115,9 +114,9 @@
     [x] Dark theme
     [x] Links colors
     [x] Mobile friendly
+    [ ] icon
     [ ] Blog
     [ ] Auto gen rss
     [ ] Auto gen list of links to folder
-    [ ] icon
     [ ] social banner generate
  -->
