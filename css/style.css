@@ -1,0 +1,48 @@
+a:link {
+  color: #0074d9;
+}
+
+a:visited {
+  color: #ff4136;
+}
+
+a:hover,
+a:focus,
+a:active {
+  background-color: #ddd;
+}
+
+body {
+  border-radius: 10px;
+  padding: 52px;
+  margin: 30px auto;
+  border: solid #ddd 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100ch;
+}
+@media (max-width: 405px) {
+  body {
+    font-size: 4vmin;
+    padding: 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #ddd;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    background-color: #444;
+  }
+}
+
+section {
+  margin-top: 20px;
+}
+
+ul {
+  margin: 0px;
+}
