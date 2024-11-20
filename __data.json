@@ -1,1 +1,1 @@
-{"type":"data","nodes":[null,{"type":"data","data":[{"projects":1,"blogPosts":2},[],[]],"uses":{}}]}
+{"type":"data","nodes":[null,{"type":"data","data":[{"projects":1,"blogPosts":2},[],[3],{"title":4,"description":5,"tags":6,"datePublished":10,"dateModified":11,"author":12,"slug":13,"url":14,"type":8,"featuredImage":15},"Hello World","Hello to all the world. This is my first blog post.",[7,8,9],"test","blog","meta",["Date","2024-11-20T00:00:00.000Z"],["Date","2024-11-20T00:00:00.000Z"],"Alex","hello_world","blog/hello_world","/og-images/hello_world.png"],"uses":{}}]}
