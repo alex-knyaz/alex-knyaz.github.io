@@ -8,6 +8,8 @@ import { visit } from 'unist-util-visit';
 import { toString as hast_toString } from 'hast-util-to-string';
 import slugify from 'slugify';
 import yaml from 'yaml';
+
+// diabolical.
 import { get_projects_and_blog_data } from './src/lib/utils/markdown';
 
 function createTocPlugin() {

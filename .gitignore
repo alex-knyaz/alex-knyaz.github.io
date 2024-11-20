@@ -29,6 +29,13 @@ localtable.sqlite
 
 .history
 .svelte-kit
+# do not ignore .svelte-kit/tsconfig.json, the project would not compile without it
+# if we ever loose the file we will need to do 2 stage bootstrap process (bun run check)
+# see the output, it shuld be an error 'Cannot find module' (lib/utils/markdown) from svelte.config.js
+# so we need to delete import, then run check again, then add import back and then build works.
+!.svelte-kit/tsconfig.json
+# (to force git to not ignore the file run: `git add -f .svelte-kit/tsconfig.json`)
+
 build
 
 static/og-images/*
