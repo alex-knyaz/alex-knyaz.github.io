@@ -13,7 +13,7 @@ This is my personal website. Enjoy!
 ## Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [Hello World](https://arachnid-concrete-dory.ngrok-free.app/blog/hello_world) (Wed Nov 20 2024 05:00:00 GMT+0500 (West Kazakhstan Time))
+- [Hello World](https://arachnid-concrete-dory.ngrok-free.app/blog/hello_world) (2024-11-20)
 <!-- BLOG-POST-LIST:END -->
 
 ## Projects

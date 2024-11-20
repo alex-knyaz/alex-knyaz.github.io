@@ -63,7 +63,7 @@ async function generateReadme() {
       blogPosts
         .sort((a, b) => new Date(b.datePublished || '') - new Date(a.datePublished || ''))
         .slice(0, 5)
-        .map(post => `- [${post.title}](${siteConfig.baseUrl}/blog/${post.slug}) (${post.datePublished})`)
+        .map(post => `- [${post.title}](${siteConfig.baseUrl}/blog/${post.slug}) (${new Date(post.datePublished || '').toLocaleDateString('en-CA')})`)
         .join('\n')
     );
 
