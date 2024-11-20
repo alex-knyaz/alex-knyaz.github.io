@@ -44,11 +44,12 @@ async function generateOGImages() {
 
                 // Take screenshot
                 const ogImagesDir = join(ROOT_DIR, './static/og-images');
-                console.log('ogImagesDir: ', ogImagesDir);
                 await mkdir(ogImagesDir, { recursive: true });
 
                 const screenshotPath = join(ogImagesDir, `${post.slug}.png`);
                 await page.screenshot({ path: screenshotPath, fullPage: false });
+
+                console.log(`Generated OG image for ${post.slug}`);
             }
         }
 
