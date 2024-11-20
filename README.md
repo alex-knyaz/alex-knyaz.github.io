@@ -22,3 +22,5 @@ This is my personal website. Enjoy!
 - [Project 1](projects/project_1) - TEST PROJECT
 - [Project 2](projects/project_2) - TEST PROJECT
 <!-- PROJECTS-LIST:END -->
+
+<!-- Deployment -->
