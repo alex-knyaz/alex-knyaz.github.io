@@ -3,7 +3,9 @@ import { join } from 'path';
 import { get_projects_and_blog_data } from '../src/lib/utils/markdown';
 import { spawn } from 'bun';
 import { mkdir } from 'fs/promises';
-import { ROOT_DIR } from '../src/lib/config';
+// import { ROOT_DIR } from '../src/lib/config';
+
+const ROOT_DIR = join(__dirname, '..');
 
 const PORT = 5175;
 const WAIT_FOR_SERVER = 2000;

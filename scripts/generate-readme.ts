@@ -3,8 +3,10 @@ import puppeteer from 'puppeteer';
 import { join } from 'path';
 import { readFileSync, writeFileSync } from 'fs';
 import { siteConfig } from '../src/lib/config';
-import { ROOT_DIR } from '../src/lib/config';
+// import { ROOT_DIR } from '../src/lib/config';
 import { get_projects_and_blog_data } from '../src/lib/utils/markdown';
+
+const ROOT_DIR = join(__dirname, '..');
 
 const PORT = 5175;
 const SCREENSHOT_PATH = './static/website-preview.png';
@@ -51,6 +53,9 @@ async function generateReadme() {
     readme = replaceBetweenMarkers(readme, 'WEBSITE-PREVIEW', `![Website Preview](${SCREENSHOT_PATH})`);
 
     const { blogPosts, projects } = await get_projects_and_blog_data();
+
+    console.log('blogPosts: ', blogPosts);
+    console.log('projects: ', projects);
 
     readme = replaceBetweenMarkers(
       readme,

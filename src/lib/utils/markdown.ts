@@ -4,8 +4,15 @@ import { glob } from "glob";
 import matter from "gray-matter";
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { ROOT_DIR } from '$lib/config';
+// import { ROOT_DIR } from '$lib/config';
 import path from 'path';
+
+const PROJECT_NAME = 'alex-knyaz.github.io';
+let rootDirArr = import.meta.url.split('/');
+let last: string | undefined;
+do { last = rootDirArr.pop(); } while (rootDirArr[rootDirArr.length - 1] !== PROJECT_NAME);
+const ROOT_DIR = rootDirArr.join('/').replace('file://', '');
+
 
 export interface MetadataBase {
     title: string;
@@ -50,7 +57,9 @@ export interface MetadataBase {
 
 // Function to process markdown files
 export const processMarkdownFiles = async (dir: string) => {
+    console.log('processing dir: ', dir);
     const files = await glob('**/*.md', { cwd: dir });
+    console.log('found files: ', files);
     const entries = await Promise.all(
         files.map(async (file) => {
             const filePath = join(dir, file);
@@ -65,6 +74,7 @@ export const processMarkdownFiles = async (dir: string) => {
             metadata.slug = file.replace(/\/\+page\.md$/, '');
             metadata.url = path.relative(join(ROOT_DIR, 'src', 'routes'), filePath.replace(/\/\+page\.md$/, ''));
             metadata.type = metadata.url.includes('blog') ? 'blog' : 'project';
+            console.log('discovered metadata: ', metadata.type, metadata.url);
             
             if (!metadata?.featuredImage) {
                 try {

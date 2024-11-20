@@ -11,23 +11,23 @@ export const AUTHOR_DEFAULTS = {
     twitterCard: 'summary_large_image' as const,
 };
 
-let ROOT_DIR: string;
+// const ROOT_DIR = import.meta.url.split('/').slice(0, -1).join('/');
 
-try {
-    const join = (await import('path')).join;
-    ROOT_DIR = join(__dirname, '..', '..');
-    console.log('got ROOT_DIR from __dirname', ROOT_DIR);
-} catch {
-    try {
-        // Fall back to ESM import.meta if __dirname not available
-        const join = (await import('path')).join;
-        ROOT_DIR = join(new URL(import.meta.url).pathname, '..', '..', '..');
-        console.log('got ROOT_DIR from import.meta.url', ROOT_DIR);
-        console.log('new URL(import.meta.url).pathname: ', new URL(import.meta.url).pathname);
+// try {
+//     const join = (await import('path')).join;
+//     ROOT_DIR = join(__dirname, '..', '..');
+//     console.log('got ROOT_DIR from __dirname', ROOT_DIR);
+// } catch {
+//     try {
+//         // Fall back to ESM import.meta if __dirname not available
+//         const join = (await import('path')).join;
+//         ROOT_DIR = join(new URL(import.meta.url).pathname, '..', '..', '..');
+//         console.log('got ROOT_DIR from import.meta.url', ROOT_DIR);
+//         console.log('new URL(import.meta.url).pathname: ', new URL(import.meta.url).pathname);
 
-    } catch {
-        console.error('Error getting ROOT_DIR');
-    }
-}
+//     } catch {
+//         console.error('Error getting ROOT_DIR');
+//     }
+// }
 
-export { ROOT_DIR };
+// export { ROOT_DIR };
