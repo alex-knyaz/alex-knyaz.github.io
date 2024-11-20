@@ -1,0 +1,15 @@
+@import './boxicons/css/boxicons.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+a {
+    @apply text-blue-500 hover:underline transition-colors duration-300;
+
+    &:visited { @apply text-purple-600 dark:text-lime-300; }
+    &:hover { @apply text-blue-700; }
+    &:focus-visible { @apply outline outline-2 outline-offset-2 outline-blue-500 dark:outline-lime-300 rounded-sm; }
+    // &:active { @apply text-blue-800; }
+}
