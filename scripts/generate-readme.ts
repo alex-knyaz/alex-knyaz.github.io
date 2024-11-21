@@ -3,7 +3,6 @@ import puppeteer from 'puppeteer';
 import { join } from 'path';
 import { readFileSync, writeFileSync } from 'fs';
 import { siteConfig } from '../src/lib/config';
-// import { ROOT_DIR } from '../src/lib/config';
 import { get_projects_and_blog_data } from '../src/lib/utils/markdown';
 
 const ROOT_DIR = join(__dirname, '..');
@@ -37,13 +36,15 @@ async function generateReadme() {
     await new Promise(resolve => setTimeout(resolve, WAIT_FOR_SERVER));
     
     console.log('Taking screenshot...');
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     
     await page.setViewport(VIEWPORT);
-    await page.goto(`http://localhost:${PORT}`, { waitUntil: 'networkidle0', timeout: 30000 });
-    
+    console.log('goto');
+    await page.goto(`http://localhost:${PORT}`, { waitUntil: 'networkidle0', timeout: 3000 });
+    console.log('screenshot');
     await page.screenshot({ path: join(ROOT_DIR, SCREENSHOT_PATH), fullPage: false});
+    console.log('close');
     await browser.close();
     
     console.log('Updating README...');
@@ -63,7 +64,7 @@ async function generateReadme() {
       blogPosts
         .sort((a, b) => new Date(b.datePublished || '') - new Date(a.datePublished || ''))
         .slice(0, 5)
-        .map(post => `- [${post.title}](${siteConfig.baseUrl}/blog/${post.slug}) (${new Date(post.datePublished || '').toLocaleDateString('en-CA')})`)
+        .map(post => `- [${post.title}](${siteConfig.baseUrl}blog/${post.slug}) (${new Date(post.datePublished || '').toLocaleDateString('en-CA')})`)
         .join('\n')
     );
 
@@ -71,7 +72,7 @@ async function generateReadme() {
       readme,
       'PROJECTS-LIST',
       projects
-        .map(project => `- [${project.title}](${project.url || `${siteConfig.baseUrl}/projects/${project.slug}`}) - ${project.description}`)
+        .map(project => `- [${project.title}](${project.url || `${siteConfig.baseUrl}projects/${project.slug}`}) - ${project.description}`)
         .join('\n')
     );
 

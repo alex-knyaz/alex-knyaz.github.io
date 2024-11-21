@@ -4,15 +4,8 @@ import { glob } from "glob";
 import matter from "gray-matter";
 import { readFileSync } from 'fs';
 import { join } from 'path';
-// import { ROOT_DIR } from '$lib/config';
+import { ROOT_DIR } from '$lib/config';
 import path from 'path';
-
-const PROJECT_NAME = 'alex-knyaz.github.io';
-let rootDirArr = import.meta.url.split('/');
-let last: string | undefined;
-do { last = rootDirArr.pop(); } while (rootDirArr[rootDirArr.length - 1] !== PROJECT_NAME);
-const ROOT_DIR = rootDirArr.join('/').replace('file://', '');
-
 
 export interface MetadataBase {
     title: string;

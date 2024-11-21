@@ -20,6 +20,7 @@
         twitterUsername,
         publisher,
         slug,
+        url,
         type = 'page'
     }: PropTypes = $props();
 
@@ -27,7 +28,13 @@
         console.log("featuredImage", featuredImage);
     });
     
-    const canonicalUrl = (slug ? `${siteConfig.baseUrl}/${type}/${slug}` : siteConfig.baseUrl);
+    let canonicalUrl = $derived(slug ? `${siteConfig.baseUrl}${url}` : siteConfig.baseUrl);
+    let fimgUrl = $derived(featuredImage ? `${siteConfig.baseUrl}${featuredImage}` : undefined);
+
+    $effect(() => {
+        console.log("canonicalUrl", canonicalUrl);
+        
+    });
 
     const getSchemaType = (type: string) => {
         switch(type) {
@@ -52,7 +59,7 @@
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
     <meta property="og:url" content={canonicalUrl} />
-    {#if featuredImage}<meta property="og:image" content={featuredImage} />{/if}
+    {#if fimgUrl}<meta property="og:image" content={fimgUrl} />{/if}
     {#if datePublished}<meta property="article:published_time" content={datePublished} />{/if}
     {#if dateModified}<meta property="article:modified_time" content={dateModified} />{/if}
     {#if author}<meta property="article:author" content={author} />{/if}
@@ -61,7 +68,7 @@
     <meta name="twitter:card" content={twitterCardType || 'summary_large_image'} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {#if featuredImage}<meta name="twitter:image" content={featuredImage} />{/if}
+    {#if fimgUrl}<meta name="twitter:image" content={fimgUrl} />{/if}
     {#if twitterUsername}<meta name="twitter:creator" content={`@${twitterUsername}`} />{/if}
     
     <!-- RSS Feed -->
@@ -69,7 +76,7 @@
         rel="alternate" 
         type="application/rss+xml" 
         title={`${siteConfig.siteName} RSS Feed`}
-        href={`${siteConfig.baseUrl}/rss.xml`}
+        href={`${siteConfig.baseUrl}rss.xml`}
     />
     
     <!-- Apple mobile web app tags (if you want to enable PWA-like features on iOS) -->
@@ -87,7 +94,7 @@
             ...(featuredImage && {
                 "image": {
                     "@type": "ImageObject",
-                    "url": `${siteConfig.baseUrl}${featuredImage}`
+                    "url": fimgUrl
                 }
             }),
             ...(datePublished && { "datePublished": datePublished }),

@@ -16,15 +16,15 @@ export async function GET() {
     <title>${config.siteConfig.siteName}</title>
     <description>Alex's personal website</description>
     <link>${config.siteConfig.baseUrl}</link>
-    <atom:link href="${config.siteConfig.baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${config.siteConfig.baseUrl}rss.xml" rel="self" type="application/rss+xml"/>
     ${allContent
         .map(
             (post: MetadataBase) => `
             <item>
                 <title>${escapeXml(post.title)}</title>
                 <description>${escapeXml(post.description)}</description>
-                <link>${config.siteConfig.baseUrl}/${post.slug}</link>
-                <guid isPermaLink="true">${config.siteConfig.baseUrl}/${post.slug}</guid>
+                <link>${config.siteConfig.baseUrl}${post.slug}</link>
+                <guid isPermaLink="true">${config.siteConfig.baseUrl}${post.slug}</guid>
                 ${post.datePublished ? `<pubDate>${new Date(post.datePublished).toUTCString()}</pubDate>` : ''}
             </item>
         `)

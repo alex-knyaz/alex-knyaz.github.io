@@ -1,5 +1,5 @@
 export const siteConfig = {
-    baseUrl: import.meta.env.BASE_URL || 'https://arachnid-concrete-dory.ngrok-free.app',
+    baseUrl: import.meta.env.BASE_URL || 'https://arachnid-concrete-dory.ngrok-free.app/',
     siteName: 'Alex site',
 } as const;
 
@@ -11,23 +11,8 @@ export const AUTHOR_DEFAULTS = {
     twitterCard: 'summary_large_image' as const,
 };
 
-// const ROOT_DIR = import.meta.url.split('/').slice(0, -1).join('/');
-
-// try {
-//     const join = (await import('path')).join;
-//     ROOT_DIR = join(__dirname, '..', '..');
-//     console.log('got ROOT_DIR from __dirname', ROOT_DIR);
-// } catch {
-//     try {
-//         // Fall back to ESM import.meta if __dirname not available
-//         const join = (await import('path')).join;
-//         ROOT_DIR = join(new URL(import.meta.url).pathname, '..', '..', '..');
-//         console.log('got ROOT_DIR from import.meta.url', ROOT_DIR);
-//         console.log('new URL(import.meta.url).pathname: ', new URL(import.meta.url).pathname);
-
-//     } catch {
-//         console.error('Error getting ROOT_DIR');
-//     }
-// }
-
-// export { ROOT_DIR };
+const PROJECT_NAME = 'alex-knyaz.github.io';
+let rootDirArr = import.meta.url.split('/');
+let last: string | undefined;
+do { last = rootDirArr.pop(); } while (rootDirArr[rootDirArr.length - 1] !== PROJECT_NAME);
+export const ROOT_DIR = rootDirArr.join('/').replace('file://', '');

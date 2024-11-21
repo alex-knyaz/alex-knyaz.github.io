@@ -111,19 +111,30 @@
 </main>
 
 <!-- 
+    BUG: [ ] post page: mainEntityOfPage is not correct: './/blog/hello_world' is not a 'uri'
+    BUG: [ ] og:url is not correct. (.//blog/hello_world, should be {site.base_url}/blog/hello_world)
+
+    BUG: [ ] post page: image url: './/og-images/hello_world.png' is not a 'uri'
+    BUG: [ ] post page: A value for the publisher field is required.
+    BUG: [ ] one link without title.
+    BUG: [ ] More than one title tag found
+    BUG: [ ] The META KEYWORDS tag is not defined
+    BUG: [ ] In order to be recognized by Google the icon must be in .ICO format, it should be named "favicon.ico" and be located in the root directory of the website.
+    BUG: [ ] Warning! This page doesn't have an Apple Icon.
+
     TODO: [x] make share (og) image generation script.
-    TODO: [ ] add deployment workflow.
-    
+    TODO: [x] add deployment workflow.
+    TODO: [x] fix ROOT_DIR everywhere.
+
     TODO: [ ] cleanup meta tags, make sure everything is correct and up to spec.
     TODO: [ ] more meta in rss feed (preview images?).
+    TODO: [ ] display publish dates on the website.
+    TODO: [ ] Post on how to semantic web..
+    TODO: [ ] https://diff.blog/   ?
 
     TODO: [ ] generate audio version of blog posts.
     TODO: [ ] use ai to make automatic translations of blog posts.
 
-    TODO: [x] ensure that syntax higliting
-    TODO: [x] latex works in markdown blog posts.
-    TODO: [x] ensure that i can embed svelte components in markdown blog posts.
-    TODO: [x] autogenerate readme (blogposts + projects + website screenshot).
  -->
 
 <style>
