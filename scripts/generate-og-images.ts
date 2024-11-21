@@ -41,8 +41,11 @@ async function generateOGImages() {
                 // Generate URL (same as in your server code)
                 const params = new URLSearchParams({ title: post.title, description: post.description });
 
+                const url = `http://localhost:${PORT}/og-image?${params.toString()}`;
+                console.log('url: ', url);
                 // Visit the page (assuming local dev server is running)
-                await page.goto(`http://localhost:${PORT}/og-image?${params.toString()}`);
+                await page.goto(url);
+                await page.waitForNetworkIdle();
 
                 // Take screenshot
                 const ogImagesDir = join(ROOT_DIR, './static/og-images');

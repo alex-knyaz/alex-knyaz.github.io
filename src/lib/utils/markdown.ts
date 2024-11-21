@@ -74,6 +74,7 @@ export const processMarkdownFiles = async (dir: string) => {
             metadata.url = path.relative(join(ROOT_DIR, 'src', 'routes'), filePath.replace(/\/\+page\.md$/, ''));
             metadata.type = metadata.url.includes('blog') ? 'blog' : 'project';
             console.log('discovered metadata: ', metadata.type, metadata.url);
+            console.log('metadata: ', metadata);
             
             if (!metadata?.featuredImage) {
                 try {

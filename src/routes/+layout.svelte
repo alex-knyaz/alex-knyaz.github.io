@@ -4,7 +4,6 @@
     import '../app.scss';
     import '../prism.scss';
     import '../katex.css';
-
     
     let { children } = $props();
 </script>
