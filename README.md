@@ -7,13 +7,13 @@
 This is my personal website. Enjoy!
 
 <!-- HOMEPAGE-LINK:START -->
-[Go to the website](https://arachnid-concrete-dory.ngrok-free.app)
+[Go to the website](https://alex-knyaz.github.io/)
 <!-- HOMEPAGE-LINK:END -->
 
 ## Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [Hello World](https://arachnid-concrete-dory.ngrok-free.app/blog/hello_world) (2024-11-20)
+- [Hello World](https://alex-knyaz.github.io/blog/hello_world) (2024-11-20)
 <!-- BLOG-POST-LIST:END -->
 
 ## Projects

@@ -19,7 +19,7 @@
         id="article-container"
         class="border md p-4 mx-auto rounded-2xl dark:bg-slate-800 dark:border-slate-700 main-container relative">
         <div class="absolute top-4 right-4"> <SwitchThemeButton /> </div>
-        <div> <a href="/">← go back</a> </div>
+        <div> <a href="/" title="go to the homepage">← go back</a> </div>
         <div class="prose dark:prose-invert">
             {#if props.children} {@render props.children()} {/if}
         </div>

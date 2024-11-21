@@ -5,9 +5,7 @@
     type PropTypes = MetadataBase & {
         type?: 'blog' | 'project' | 'page';
     };
-
-    // let __props: PropTypes = $props();
-
+    
     let {
         title, 
         description, 
@@ -25,7 +23,7 @@
     }: PropTypes = $props();
 
     let canonicalUrl = $derived(slug ? `${siteConfig.baseUrl}${url}` : siteConfig.baseUrl);
-    let fimgUrl = $derived(featuredImage ? `${siteConfig.baseUrl}${featuredImage}` : undefined);
+    let fimgUrl = $derived(featuredImage ? new URL(featuredImage, siteConfig.baseUrl).toString() : undefined);
 
     $effect(() => {
         console.log("featuredImage", featuredImage);

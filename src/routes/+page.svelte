@@ -111,15 +111,17 @@
 </main>
 
 <!-- 
-    BUG: [ ] post page: mainEntityOfPage is not correct: './/blog/hello_world' is not a 'uri'
-    BUG: [ ] og:url is not correct. (.//blog/hello_world, should be {site.base_url}/blog/hello_world)
-
+    BUG: [x] post page: mainEntityOfPage is not correct: './/blog/hello_world' is not a 'uri'
+    BUG: [x] og:url is not correct. (.//blog/hello_world, should be {site.base_url}/blog/hello_world)
+    BUG: [x] More than one title tag found
+    
     BUG: [ ] post page: image url: './/og-images/hello_world.png' is not a 'uri'
+
     BUG: [ ] post page: A value for the publisher field is required.
-    BUG: [ ] one link without title.
-    BUG: [ ] More than one title tag found
-    BUG: [ ] The META KEYWORDS tag is not defined
-    BUG: [ ] In order to be recognized by Google the icon must be in .ICO format, it should be named "favicon.ico" and be located in the root directory of the website.
+    BUG: [x] one link without title.
+    
+    BUG: [ ] The META KEYWORDS tag is not defined ????
+    BUG: [x] In order to be recognized by Google the icon must be in .ICO format, it should be named "favicon.ico" and be located in the root directory of the website.
     BUG: [ ] Warning! This page doesn't have an Apple Icon.
 
     TODO: [x] make share (og) image generation script.

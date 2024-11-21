@@ -153,12 +153,12 @@ mdsvex_config.markup = async (param) => {
 			const matchingEntry = allEntries.find(entry => entry.url === url);
 
 			// Debug logging
-			console.log('filename:', param.filename);
-			console.log('url:', url);
-			console.log('all entries:', allEntries.map(entry => ({
-				url: entry.url
-			})));
-			console.log('matchingEntry:', matchingEntry);
+			// console.log('filename:', param.filename);
+			// console.log('url:', url);
+			// console.log('all entries:', allEntries.map(entry => ({
+			// 	url: entry.url
+			// })));
+			// console.log('matchingEntry:', matchingEntry);
 
 			if (matchingEntry) {
 				const newFrontmatter = yaml.stringify(matchingEntry);
@@ -174,6 +174,8 @@ mdsvex_config.markup = async (param) => {
 	}
 	return result;
 };
+
+console.log("   [[[  process.env.NODE_ENV  ]]]  : ", process.env.NODE_ENV);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
