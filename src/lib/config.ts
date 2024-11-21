@@ -3,6 +3,8 @@ export const siteConfig = {
     siteName: 'Alex site',
 } as const;
 
+console.log("siteConfig: ", siteConfig);
+
 // Simple defaults object for author '@alex' (case insensitive)
 export const AUTHOR_DEFAULTS = {
     twitterUsername: '@alex_knyaz_st',
