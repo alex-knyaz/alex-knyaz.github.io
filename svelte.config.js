@@ -195,11 +195,7 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		}),
-		paths: {
-			// will this fix my stuff?
-			base: 'https://alex-knyaz.github.io/'
-		}
+		})
 	}
 };
 

@@ -1,5 +1,7 @@
 export const siteConfig = {
-    baseUrl: import.meta.env.BASE_URL || 'https://arachnid-concrete-dory.ngrok-free.app/',
+    // import.meta.env.BASE_URL || 'https://arachnid-concrete-dory.ngrok-free.app/',
+    // i just do not want to deal with the env stuff right now.
+    baseUrl: 'https://alex-knyaz.github.io/',
     siteName: 'Alex site',
 } as const;
 
