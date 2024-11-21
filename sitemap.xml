@@ -5,14 +5,14 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
         <url>
-            <loc>//</loc>
-            <lastmod>2024-11-21T08:09:46.548Z</lastmod>
+            <loc>https://alex-knyaz.github.io//</loc>
+            <lastmod>2024-11-21T08:21:34.469Z</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.7</priority>
         </url>
     
         <url>
-            <loc>//blog/hello_world</loc>
+            <loc>https://alex-knyaz.github.io//blog/hello_world</loc>
             <lastmod>Wed Nov 20 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.7</priority>
