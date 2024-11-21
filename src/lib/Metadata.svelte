@@ -24,13 +24,16 @@
         type = 'page'
     }: PropTypes = $props();
 
-    $effect(() => {
-        console.log("featuredImage", featuredImage);
-    });
-    
     let canonicalUrl = $derived(slug ? `${siteConfig.baseUrl}${url}` : siteConfig.baseUrl);
     let fimgUrl = $derived(featuredImage ? `${siteConfig.baseUrl}${featuredImage}` : undefined);
 
+    $effect(() => {
+        console.log("featuredImage", featuredImage);
+        console.log("fimgUrl", fimgUrl);
+        console.log("canonicalUrl", canonicalUrl);
+        console.log("siteConfig.baseUrl", siteConfig.baseUrl);
+    });
+    
     $effect(() => {
         console.log("canonicalUrl", canonicalUrl);
         

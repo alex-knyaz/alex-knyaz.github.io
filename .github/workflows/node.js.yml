@@ -26,7 +26,9 @@ jobs:
     #   run: bun run scripts/generate-readme.ts
 
     - name: Build project
-      run: BASE_URL=https://alex-knyaz.github.io/ bun run build
+      env:
+        BASE_URL: https://alex-knyaz.github.io/
+      run: bun run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
