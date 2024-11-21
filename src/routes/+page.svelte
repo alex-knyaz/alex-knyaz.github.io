@@ -124,7 +124,7 @@
 
     TODO: [x] make share (og) image generation script.
     TODO: [x] add deployment workflow.
-    TODO: [x] fix ROOT_DIR everywhere.
+    TODO: [ ] fix ROOT_DIR everywhere.
 
     TODO: [ ] cleanup meta tags, make sure everything is correct and up to spec.
     TODO: [ ] more meta in rss feed (preview images?).

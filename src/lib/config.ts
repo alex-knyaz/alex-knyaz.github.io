@@ -11,8 +11,12 @@ export const AUTHOR_DEFAULTS = {
     twitterCard: 'summary_large_image' as const,
 };
 
-const PROJECT_NAME = 'alex-knyaz.github.io';
-let rootDirArr = import.meta.url.split('/');
-let last: string | undefined;
-do { last = rootDirArr.pop(); } while (rootDirArr[rootDirArr.length - 1] !== PROJECT_NAME);
-export const ROOT_DIR = rootDirArr.join('/').replace('file://', '');
+
+// this being in this file breaks cd and all scripts.
+
+
+// const PROJECT_NAME = 'alex-knyaz.github.io';
+// let rootDirArr = import.meta.url.split('/');
+// let last: string | undefined;
+// do { last = rootDirArr.pop(); } while (rootDirArr[rootDirArr.length - 1] !== PROJECT_NAME);
+// export const ROOT_DIR = rootDirArr.join('/').replace('file://', '');
