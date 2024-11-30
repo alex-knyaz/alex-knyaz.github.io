@@ -5,11 +5,20 @@
 @tailwind utilities;
 
 
+html {
+    scroll-behavior: smooth;
+    // selection color
+    ::selection {
+        @apply bg-lime-300  dark:text-black;
+    }
+}
+
 a {
     @apply text-blue-500 hover:underline transition-colors duration-300;
 
     &:visited { @apply text-purple-600 dark:text-lime-300; }
-    &:hover { @apply text-blue-700; }
+    &:hover { @apply text-blue-700 dark:text-white; }
     &:focus-visible { @apply outline outline-2 outline-offset-2 outline-blue-500 dark:outline-lime-300 rounded-sm; }
+    ::selection { @apply dark:text-red-800; }
     // &:active { @apply text-blue-800; }
 }

@@ -7,13 +7,13 @@ export async function GET() {
     const { projects, blogPosts } = await get_projects_and_blog_data();
 
     const allPages = [
-        { url: '/', lastmod: new Date().toISOString() }, // Homepage
+        { url: '', lastmod: new Date().toISOString() }, // Homepage
         ...projects.map((project: MetadataBase) => ({
-            url: `/projects/${project.slug}`,
+            url: `projects/${project.slug}`,
             lastmod: project.dateModified || project.datePublished
         })),
         ...blogPosts.map((post: MetadataBase) => ({
-            url: `/blog/${post.slug}`,
+            url: `blog/${post.slug}`,
             lastmod: post.dateModified || post.datePublished
         }))
     ];

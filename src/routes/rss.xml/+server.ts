@@ -11,7 +11,7 @@ export async function GET() {
         .sort((a, b) => new Date(b.datePublished || 0).getTime() - new Date(a.datePublished || 0).getTime());
 
     const xml = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
     <title>${config.siteConfig.siteName}</title>
     <description>Alex's personal website</description>
@@ -26,6 +26,7 @@ export async function GET() {
                 <link>${config.siteConfig.baseUrl}${post.slug}</link>
                 <guid isPermaLink="true">${config.siteConfig.baseUrl}${post.slug}</guid>
                 ${post.datePublished ? `<pubDate>${new Date(post.datePublished).toUTCString()}</pubDate>` : ''}
+                ${post.featuredImage ? `<media:content url="${new URL(post.featuredImage, config.siteConfig.baseUrl).toString()}" medium="image" />` : ''}
             </item>
         `)
         .join('')}

@@ -75,6 +75,12 @@ export const processMarkdownFiles = async (dir: string) => {
             metadata.type = metadata.url.includes('blog') ? 'blog' : 'project';
             console.log('discovered metadata: ', metadata.type, metadata.url);
             console.log('metadata: ', metadata);
+
+            if (metadata?.github_url) {
+                console.log('github_url: ', metadata.github_url);
+                // todo: get tags, datePublished, dateModified, featuredImage from github
+                metadata.url = metadata.github_url;
+            }
             
             if (!metadata?.featuredImage) {
                 try {

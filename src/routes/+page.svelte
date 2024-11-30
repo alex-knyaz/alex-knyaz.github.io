@@ -65,7 +65,7 @@
                     </h2>
                     <div class="grid sm:grid-cols-3 grid-cols-1 sm:gap-4 gap-3">
                         {#each data.projects as project}
-                            <a href="/projects/{project.slug}" class="block">
+                            <a href={project.url?.startsWith('https') ? project.url : `/projects/${project.slug}`} class="block">
                                 <div
                                     class="border rounded-2xl dark:bg-slate-800 dark:border-slate-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md dark:hover:shadow-slate-700/50"
                                 >
@@ -111,27 +111,20 @@
 </main>
 
 <!-- 
-    BUG: [x] post page: mainEntityOfPage is not correct: './/blog/hello_world' is not a 'uri'
-    BUG: [x] og:url is not correct. (.//blog/hello_world, should be {site.base_url}/blog/hello_world)
-    BUG: [x] More than one title tag found
-    
-    BUG: [ ] post page: image url: './/og-images/hello_world.png' is not a 'uri'
-
-    BUG: [ ] post page: A value for the publisher field is required.
-    BUG: [x] one link without title.
-    
+    TODO: [ ] cleanup meta tags, make sure everything is correct and up to spec.
+    BUG: [ ] post page: A value for the publisher field is required. + url for author.
     BUG: [ ] The META KEYWORDS tag is not defined ????
-    BUG: [x] In order to be recognized by Google the icon must be in .ICO format, it should be named "favicon.ico" and be located in the root directory of the website.
     BUG: [ ] Warning! This page doesn't have an Apple Icon.
+    TODO: [ ] manifest file/ web worker?
+
+    TODO: [ ] more meta in rss feed (preview images?).
+    TODO: [ ] display publish dates on the website.
 
     TODO: [x] make share (og) image generation script.
     TODO: [x] add deployment workflow.
     TODO: [ ] fix ROOT_DIR everywhere.
 
-    TODO: [ ] cleanup meta tags, make sure everything is correct and up to spec.
-    TODO: [ ] more meta in rss feed (preview images?).
-    TODO: [ ] display publish dates on the website.
-    TODO: [ ] Post on how to semantic web..
+    TODO: [ ] Post on how to semantic web, seo, etc.
     TODO: [ ] https://diff.blog/   ?
 
     TODO: [ ] generate audio version of blog posts.
