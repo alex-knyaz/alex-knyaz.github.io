@@ -1,1 +1,0 @@
-import{b as a,E as s,d as r,h as i,e as n,i as o,j as t}from"./runtime.CYGL3sOw.js";function e(e,m,...u){var f,j=e,l=o;a((()=>{l!==(l=m())&&(f&&(t(f),f=null),f=r((()=>l(j,...u))))}),s),i&&(j=n)}export{e as s};
