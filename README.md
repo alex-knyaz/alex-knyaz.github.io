@@ -18,7 +18,7 @@ This is my personal website. Enjoy!
 
 ## Projects
 <!-- PROJECTS-LIST:START -->
-
+- [Svelte Dom Tree](https://alex-knyaz.github.io/svelte-domtree/) - Svelte component to visualize DOM tree like in chrome DevTools.
 <!-- PROJECTS-LIST:END -->
 
 <!-- Deployment -->

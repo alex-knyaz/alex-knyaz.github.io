@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import typography from '@tailwindcss/typography';
 import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import type { ConfigEnv, UserConfig } from 'vite';
@@ -18,7 +19,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 					tailwindcss({
 						content: ['./src/**/*.{html,js,svelte,ts,md}'],
 						theme: { extend: {} },
-						plugins: [require('@tailwindcss/typography')],
+						// plugins: [require('@tailwindcss/typography')],
+						plugins: [typography],
 						darkMode: 'selector',
 					}) as any,
 					autoprefixer as any,

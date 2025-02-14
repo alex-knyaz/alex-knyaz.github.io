@@ -10,7 +10,7 @@ import slugify from 'slugify';
 import yaml from 'yaml';
 
 // diabolical.
-import { get_projects_and_blog_data } from './src/lib/utils/markdown';
+// import { get_projects_and_blog_data } from './src/lib/utils/markdown';
 
 function createTocPlugin() {
 	return function(tree) {
@@ -135,7 +135,8 @@ const mdsvex_config = mdsvex({
 const m_old = mdsvex_config.markup;
 mdsvex_config.markup = async (param) => {
 	if (param.filename.endsWith('.md') || param.filename.endsWith('.svx')) {
-		const { projects, blogPosts } = await get_projects_and_blog_data();
+		// const { projects, blogPosts } = await get_projects_and_blog_data();
+		const { projects, blogPosts } = { projects: [], blogPosts: [] };
 		const allEntries = [...projects, ...blogPosts];
 
 		const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
