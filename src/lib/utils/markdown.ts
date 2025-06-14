@@ -55,7 +55,7 @@ export interface MetadataBase {
 }
 
 // Function to process markdown files
-export const processMarkdownFiles = async (dir: string) => {
+export const processMarkdownFiles = async (dir: string, showHidden: boolean = false) => {
     console.log('processing dir: ', dir);
     const files = await glob('**/*.md', { cwd: dir });
     console.log('found files: ', files);
@@ -63,7 +63,7 @@ export const processMarkdownFiles = async (dir: string) => {
         files.map(async (file) => {
             const filePath = join(dir, file);
             const { data: metadata } = matter(readFileSync(filePath, 'utf8'));
-            if (metadata?.hide === true) return null;
+            if (metadata?.hide === true && !showHidden) return null;
 
             // Apply author defaults if author is '@alex' (case insensitive)
             if (metadata?.author?.toLowerCase() === '@alex') {
@@ -109,12 +109,12 @@ export const processMarkdownFiles = async (dir: string) => {
     return entries.filter((entry): entry is NonNullable<typeof entry> => entry !== null);
 };
 
-export const get_projects_and_blog_data = async () => {
+export const get_projects_and_blog_data = async (showHidden: boolean = false) => {
     const projectsDir = join(ROOT_DIR, 'src/routes/projects');
     const blogDir = join(ROOT_DIR, 'src/routes/blog');
 
     return {
-        projects: await processMarkdownFiles(projectsDir),
-        blogPosts: await processMarkdownFiles(blogDir)
+        projects: await processMarkdownFiles(projectsDir, showHidden),
+        blogPosts: await processMarkdownFiles(blogDir, showHidden),
     };
 }
